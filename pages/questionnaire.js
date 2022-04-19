@@ -57,16 +57,29 @@ export default function Questionnaire() {
     }
   };
 
+  const TallyResults = (answers) => {
+    console.log(answers);
+  };
+
   const handleClick = (answer) => {
+    console.log(answers);
     if (surveys.includes(answer)) {
       takeSurvey(answer);
     } else if (questionGroup.length >= questionNumber + 1) {
       setAnswers([...answers, answer]);
-      setQuestionNumber(questionNumber + 1);
+      if (questionGroup.length > questionNumber + 1)
+        setQuestionNumber(questionNumber + 1);
+    } else if (questionGroup.length === questionNumber + 1) {
+      TallyResults(answers);
     } else {
       console.log('work!');
     }
   };
+
+  // TODO:
+  // create checkbox component
+  // instead of using the same component,
+  // have different surveys use unique components.
 
   return (
     <main className={styles.main}>
