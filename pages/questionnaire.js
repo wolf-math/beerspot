@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import questions from '../questions/question';
+import { bestBeerQuestions, pairingQuestions } from '../questions/question';
 import styled from 'styled-components';
 import styles from '../styles/Home.module.css';
 
@@ -36,22 +36,52 @@ const Button = styled.button`
 `;
 
 export default function Questionnaire() {
-  const [questionSection, setQuestionSection] = useState({
-    question: 'What kind of experience are you looking for?',
-    answers: ['To Forget', 'To Eat With a Meal', 'To Drink the Best Beer']
-  });
-  const [ansers, setAnswers] = useState([]);
+  const surveys = ['To Forget', 'To Eat With a Meal', 'To Drink the Best Beer'];
+  const [questionGroup, setQuestionGroup] = useState([
+    {
+      question: 'What kind of experience are you looking for?',
+      answers: surveys
+    }
+  ]);
+  const [questionNumber, setQuestionNumber] = useState(0);
+  const [answers, setAnswers] = useState([]);
+
+  const takeSurvey = (answer) => {
+    switch (answer) {
+      case 'To Eat With a Meal':
+        setQuestionGroup(pairingQuestions);
+        break;
+      case 'To Drink the Best Beer':
+        setQuestionGroup(bestBeerQuestions);
+        break;
+    }
+  };
+
+  const handleClick = (answer) => {
+    if (surveys.includes(answer)) {
+      takeSurvey(answer);
+    } else if (questionGroup.length >= questionNumber + 1) {
+      setAnswers([...answers, answer]);
+      setQuestionNumber(questionNumber + 1);
+    } else {
+      console.log('work!');
+    }
+  };
 
   return (
     <main className={styles.main}>
-      <QuestionSection>
-        <QuestionText>{questionSection.question}</QuestionText>
-      </QuestionSection>
-      <AnswerSection>
-        {questionSection.answers.map((answer) => {
-          <Button>{answer}</Button>;
-        })}
-      </AnswerSection>
+      <>
+        <QuestionSection>
+          <QuestionText>{questionGroup[questionNumber].question}</QuestionText>
+        </QuestionSection>
+        <AnswerSection>
+          {questionGroup[questionNumber].answers.map((answer) => (
+            <Button key={answer} onClick={() => handleClick(answer)}>
+              {answer}
+            </Button>
+          ))}
+        </AnswerSection>
+      </>
     </main>
   );
 }
