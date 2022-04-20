@@ -56,7 +56,6 @@ export default function Questionnaire() {
         break;
     }
   };
-
   const TallyResults = (answers) => {
     console.log(answers);
   };
@@ -76,10 +75,33 @@ export default function Questionnaire() {
     }
   };
 
-  // TODO:
-  // create checkbox component
-  // instead of using the same component,
-  // have different surveys use unique components.
+  const beerSurvey = () => {
+    <>
+      <QuestionSection>
+        <QuestionText>{bestBeerQuestions.question}</QuestionText>
+      </QuestionSection>
+      <AnswerSection>
+        {bestBeerQuestions.answers.map((answer) => (
+          <Button key={answer} onClick={() => handleClick(answer)}>
+            {answer}
+          </Button>
+        ))}
+      </AnswerSection>
+    </>;
+  };
+
+  const pairingSurvey = () => {
+    <>
+      <QuestionSection>
+        <QuestionText>{pairingQuestions.question}</QuestionText>
+      </QuestionSection>
+      <AnswerSection>
+        {pairingQuestions.answers.map((question) => (
+          <input key={question} type='checkbox' />
+        ))}
+      </AnswerSection>
+    </>;
+  };
 
   return (
     <main className={styles.main}>
