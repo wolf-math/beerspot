@@ -19,6 +19,9 @@ export default function beerDecider(answers) {
       break;
   }
 
+  results = beerTypes.filter((beer) => beer.taste.color === color);
+  if (results.length < 5) return results;
+
   switch (answers[1]) {
     case bestBeerQuestions[1].answers[0]:
       bbm = 1;
@@ -30,6 +33,9 @@ export default function beerDecider(answers) {
       bbm = -1;
       break;
   }
+
+  results = results.filter((beer) => beer.taste.bbm === bbm);
+  if (results.length < 5) return results;
 
   switch (answers[2]) {
     case bestBeerQuestions[2].answers[0]:
@@ -43,17 +49,8 @@ export default function beerDecider(answers) {
       break;
   }
 
-  console.log(
-    'beertytpes',
-    beerTypes
-      .filter((beer) => beer.taste.color === color)
-      .filter((beer) => beer.taste.bbm === bbm)
-      .filter(
-        (beer) =>
-          beer.strength === strength ||
-          beer.strength === strength + 1 ||
-          beer.strength === strength - 1
-      )
-  );
+  results = results.filter((beer) => beer.strength === strength);
+
+  console.log('results', results);
   //   results = beerTypes.filter((beer) => beer.taste.color === color).filter((beer) => beer.taste.bbm === bbm).filter(beer=> beer.strength === strength);
 }
