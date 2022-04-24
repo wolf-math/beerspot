@@ -2,6 +2,7 @@ import { useState } from 'react';
 import styles from '../styles/Home.module.css';
 
 import { bestBeerQuestions } from '../questions/surveyQuestions';
+import beerDecider from '../questions/beerDecider';
 
 import {
   QuestionText,
@@ -10,14 +11,15 @@ import {
   Button
 } from './questionStyles';
 
-// don't render next question until prev is answered
-
 export default function Beer() {
   const [questionNumber, setQuestionNumber] = useState(0);
   const [questionAnswers, setQuestionAnswers] = useState([]);
+
   const handleClick = (answer) => {
     setQuestionAnswers([...questionAnswers, answer]);
-    setQuestionNumber(questionNumber + 1);
+    questionNumber + 1 < bestBeerQuestions.length
+      ? setQuestionNumber(questionNumber + 1)
+      : console.log(beerDecider(questionAnswers));
   };
 
   return (

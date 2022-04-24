@@ -4,8 +4,8 @@ export const bestBeerQuestions = [
     answers: ['Light', 'Dark', 'Medium', "Don't Care"]
   },
   {
-    question: 'Sweet or bitter?',
-    answers: ['Sweet', 'Balanced', 'Bitter', 'Surprise me!']
+    question: 'Malty or bitter?',
+    answers: ['Malty', 'Balanced', 'Bitter', 'Surprise me!']
   },
   {
     question: 'Do you prefer heavy or light acohol?',

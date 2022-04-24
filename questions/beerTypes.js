@@ -17,7 +17,7 @@
 //   0 = sour
 //   1 = hoppy
 
-export const beer = [
+export const beerTypes = [
   {
     name: 'Lite American Lager',
     family: 'pale lager',
