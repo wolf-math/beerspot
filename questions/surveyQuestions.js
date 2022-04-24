@@ -19,26 +19,24 @@ export const bestBeerQuestions = [
 
 // https://www.webstaurantstore.com/article/96/beer-and-food-pairings.html
 
-export const pairingQuestions = [
-  {
-    question: 'Click the foods what applies to your pairing',
-    answers: [
-      'Burger',
-      'Spicy',
-      'Pizza',
-      'Steak',
-      'Hearty Stew',
-      'Sushi',
-      'Seafood',
-      'Dessert',
-      'Chocolate',
-      'Mexican',
-      'Game-meats',
-      'Sausage',
-      'fish',
-      'fried food',
-      'barbecue',
-      'fruit'
-    ]
-  }
-];
+export const pairingQuestions = {
+  question: 'Click the foods what applies to your pairing',
+  answers: [
+    'Burger',
+    'Spicy',
+    'Pizza',
+    'Steak',
+    'Hearty Stew',
+    'Sushi',
+    'Seafood',
+    'Dessert',
+    'Chocolate',
+    'Mexican',
+    'Game-meats',
+    'Sausage',
+    'fish',
+    'fried food',
+    'barbecue',
+    'fruit'
+  ]
+};
