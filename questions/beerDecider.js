@@ -32,7 +32,7 @@ export default function beerDecider(answers) {
     case bestBeerQuestions[1].answers[1]:
       bbm = 0;
       break;
-    case bestBeerQuestions[1].answers[1]:
+    case bestBeerQuestions[1].answers[2]:
       bbm = -1;
       break;
   }
