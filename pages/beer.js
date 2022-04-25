@@ -3,6 +3,7 @@ import styles from '../styles/Home.module.css';
 
 import { bestBeerQuestions } from '../questions/surveyQuestions';
 import beerDecider from '../questions/beerDecider';
+import Results from '../components/results';
 
 import {
   QuestionText,
@@ -14,7 +15,10 @@ import {
 export default function Beer() {
   const [questionNumber, setQuestionNumber] = useState(0);
   const [questionAnswers, setQuestionAnswers] = useState([]);
-  const [optionsLeft, setOptionsLeft] = useState(100);
+
+  const viewResults = (questionAnswers) => {
+    return;
+  };
 
   const handleClick = (answer) => {
     setQuestionAnswers([...questionAnswers, answer]);
@@ -25,21 +29,25 @@ export default function Beer() {
 
   return (
     <main className={styles.main}>
-      <>
-        <QuestionSection>
-          <QuestionText>
-            {bestBeerQuestions[questionNumber].question}
-          </QuestionText>
-        </QuestionSection>
-        <AnswerSection>
-          {bestBeerQuestions[questionNumber].answers.map((answer) => (
-            <Button key={answer} onClick={() => handleClick(answer)}>
-              {answer}
-              {beerDecider([...questionAnswers, answer]).length}
-            </Button>
-          ))}
-        </AnswerSection>
-      </>
+      {questionNumber + 1 === bestBeerQuestions.length ? (
+        <Results results={beerDecider(questionAnswers)} />
+      ) : (
+        <>
+          <QuestionSection>
+            <QuestionText>
+              {bestBeerQuestions[questionNumber].question}
+            </QuestionText>
+          </QuestionSection>
+          <AnswerSection>
+            {bestBeerQuestions[questionNumber].answers.map((answer) => (
+              <Button key={answer} onClick={() => handleClick(answer)}>
+                {answer}
+                {beerDecider([...questionAnswers, answer]).length}
+              </Button>
+            ))}
+          </AnswerSection>
+        </>
+      )}
     </main>
   );
 }
