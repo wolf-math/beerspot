@@ -14,6 +14,7 @@ import {
 export default function Beer() {
   const [questionNumber, setQuestionNumber] = useState(0);
   const [questionAnswers, setQuestionAnswers] = useState([]);
+  const [optionsLeft, setOptionsLeft] = useState(100);
 
   const handleClick = (answer) => {
     setQuestionAnswers([...questionAnswers, answer]);
@@ -34,6 +35,7 @@ export default function Beer() {
           {bestBeerQuestions[questionNumber].answers.map((answer) => (
             <Button key={answer} onClick={() => handleClick(answer)}>
               {answer}
+              {beerDecider([...questionAnswers, answer]).length}
             </Button>
           ))}
         </AnswerSection>

@@ -5,7 +5,7 @@ export default function beerDecider(answers) {
   let color;
   let bbm;
   let strength;
-  let results;
+  let results = beerTypes;
 
   switch (answers[0]) {
     case bestBeerQuestions[0].answers[0]:
@@ -17,9 +17,12 @@ export default function beerDecider(answers) {
     case bestBeerQuestions[0].answers[2]:
       color = 1;
       break;
+    default:
+      break;
   }
 
-  results = beerTypes.filter((beer) => beer.taste.color === color);
+  if (typeof color !== 'undefined')
+    results = beerTypes.filter((beer) => beer.taste.color === color);
   if (results.length < 5) return results;
 
   switch (answers[1]) {
@@ -34,7 +37,8 @@ export default function beerDecider(answers) {
       break;
   }
 
-  results = results.filter((beer) => beer.taste.bbm === bbm);
+  if (typeof bbm !== 'undefined')
+    results = results.filter((beer) => beer.taste.bbm === bbm);
   if (results.length < 5) return results;
 
   switch (answers[2]) {
@@ -49,8 +53,8 @@ export default function beerDecider(answers) {
       break;
   }
 
-  results = results.filter((beer) => beer.strength === strength);
+  if (typeof strength !== 'undefined')
+    results = results.filter((beer) => beer.strength === strength);
 
-  console.log('results', results);
-  //   results = beerTypes.filter((beer) => beer.taste.color === color).filter((beer) => beer.taste.bbm === bbm).filter(beer=> beer.strength === strength);
+  return results;
 }
