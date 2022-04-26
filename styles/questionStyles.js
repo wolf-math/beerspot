@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 export const QuestionSection = styled.div`
-  /* width: 100%; */
-  /* position: relative; */
+  width: 100%;
+  position: relative;
 `;
 
 export const QuestionText = styled.div`
@@ -11,7 +11,7 @@ export const QuestionText = styled.div`
 `;
 
 export const AnswerSection = styled.div`
-  width: 30rem;
+  width: 90%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -25,7 +25,7 @@ export const Button = styled.button`
   border-radius: 15px;
   display: flex;
   padding: 5px;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
   border: 5px solid #234668;
   margin: 5px;
