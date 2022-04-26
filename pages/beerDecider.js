@@ -16,15 +16,9 @@ export default function Beer() {
   const [questionNumber, setQuestionNumber] = useState(0);
   const [questionAnswers, setQuestionAnswers] = useState([]);
 
-  const viewResults = (questionAnswers) => {
-    return;
-  };
-
   const handleClick = (answer) => {
     setQuestionAnswers([...questionAnswers, answer]);
-    questionNumber + 1 < bestBeerQuestions.length
-      ? setQuestionNumber(questionNumber + 1)
-      : console.log(beerDecider(questionAnswers));
+    setQuestionNumber(questionNumber + 1);
   };
 
   return (

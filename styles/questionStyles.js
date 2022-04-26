@@ -11,7 +11,8 @@ export const QuestionText = styled.div`
 `;
 
 export const AnswerSection = styled.div`
-  width: 90%;
+  max-width: 50rem;
+  min-width: 20rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

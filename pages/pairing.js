@@ -8,8 +8,6 @@ import {
 
 import { pairingQuestions } from '../questions/surveyQuestions';
 
-console.log(pairingQuestions.answers);
-
 export default function Pairing() {
   return (
     <main className={styles.main}>

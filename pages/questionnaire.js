@@ -13,7 +13,7 @@ export default function Questionnaire() {
     answers: [
       { survey: ['To Forget', '/wasted'] },
       { survey: ['To Eat With a Meal', '/pairing'] },
-      { survey: ['To Drink the Best Beer', '/beer'] }
+      { survey: ['To Drink the Best Beer', '/beerDecider'] }
     ]
   };
 

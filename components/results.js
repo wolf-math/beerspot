@@ -1,9 +1,9 @@
 export default function Results(results) {
-  console.log(results.results.ma);
+  const randomResults = results.results.sort(() => Math.random() - 0.5);
   return (
     <>
       <h1>Your results</h1>
-      {results.results.map((result) => (
+      {randomResults.map((result) => (
         <div key={result.name}>
           {result.name}: {result.family}
         </div>
