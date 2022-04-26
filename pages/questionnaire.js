@@ -3,7 +3,7 @@ import {
   QuestionSection,
   AnswerSection,
   Button
-} from './questionStyles';
+} from '../styles/questionStyles';
 import styles from '../styles/Home.module.css';
 import Link from 'next/link';
 

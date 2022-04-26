@@ -1,6 +1,10 @@
 import styles from '../styles/Home.module.css';
 
-import { QuestionText, QuestionSection, AnswerSection } from './questionStyles';
+import {
+  QuestionText,
+  QuestionSection,
+  AnswerSection
+} from '../styles/questionStyles';
 
 import { pairingQuestions } from '../questions/surveyQuestions';
 

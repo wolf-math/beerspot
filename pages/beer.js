@@ -10,7 +10,7 @@ import {
   QuestionSection,
   AnswerSection,
   Button
-} from './questionStyles';
+} from '../styles/questionStyles';
 
 export default function Beer() {
   const [questionNumber, setQuestionNumber] = useState(0);
