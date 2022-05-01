@@ -1,3 +1,6 @@
+import Pairing from '../components/pairing';
+import BeerChooser from '../components/beerChooser';
+import Forget from '../components/forget';
 import {
   QuestionText,
   QuestionSection,
@@ -5,32 +8,56 @@ import {
   Button
 } from '../styles/questionStyles';
 import styles from '../styles/Home.module.css';
-import Link from 'next/link';
+import { useState } from 'react';
 
 export default function Finder() {
+  const [survey, setSurvey] = useState('main');
   const question = {
     question: 'What kind of experience are you looking for?',
     answers: [
-      { survey: ['To Forget', '/forget'] },
-      { survey: ['To Eat With a Meal', '/pairing'] },
-      { survey: ['To Drink the Best Beer', '/beerDecider'] }
+      { survey: ['To Forget', 'forget'] },
+      { survey: ['To Eat With a Meal', 'pairing'] },
+      { survey: ['To Drink the Best Beer', 'chooser'] }
     ]
   };
 
-  return (
-    <main className={styles.main}>
+  const MainMenu = () => {
+    return (
       <>
         <QuestionSection>
           <QuestionText>{question.question}</QuestionText>
         </QuestionSection>
         <AnswerSection>
           {question.answers.map((answer) => (
-            <Link key={answer.survey[0]} href={answer.survey[1]} passHref>
-              <Button>{answer.survey[0]}</Button>
-            </Link>
+            <Button
+              onClick={() => setSurvey(answer.survey[1])}
+              key={answer.survey[1]}
+            >
+              {answer.survey[0]}
+            </Button>
           ))}
         </AnswerSection>
       </>
+    );
+  };
+
+  const Main = () => {
+    switch (survey) {
+      case 'main':
+        return <MainMenu />;
+      case 'pairing':
+        return <Pairing />;
+      case 'chooser':
+        return <BeerChooser />;
+      case 'forget':
+        return <Forget />;
+    }
+  };
+
+  return (
+    <main className={styles.main}>
+      <Main />
+      <button onClick={() => setSurvey('main')}>Start Over</button>
     </main>
   );
 }

@@ -1,1 +1,1 @@
-export default function pairingDecider() {}
+export default function pairingDecider(pairings) {}

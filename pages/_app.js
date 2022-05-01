@@ -1,6 +1,5 @@
 import '../styles/globals.css';
-import '../components/navbar';
-import Navbar from '../components/navbar';
+import Navbar from '../components/Navbar';
 
 function MyApp({ Component, pageProps }) {
   return (

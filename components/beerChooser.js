@@ -1,9 +1,7 @@
 import { useState } from 'react';
-import styles from '../styles/Home.module.css';
-
 import { bestBeerQuestions } from '../questions/surveyQuestions';
-import beerDecider from '../questions/beerDecider';
-import Results from '../components/results';
+import beerDeciderQuestions from '../questions/beerDecider';
+import Results from './Results';
 
 import {
   QuestionText,
@@ -12,7 +10,7 @@ import {
   Button
 } from '../styles/questionStyles';
 
-export default function Beer() {
+export default function BeerChooser() {
   const [questionNumber, setQuestionNumber] = useState(0);
   const [questionAnswers, setQuestionAnswers] = useState([]);
 
@@ -22,9 +20,9 @@ export default function Beer() {
   };
 
   return (
-    <main className={styles.main}>
+    <>
       {questionNumber + 1 === bestBeerQuestions.length ? (
-        <Results results={beerDecider(questionAnswers)} />
+        <Results results={beerDeciderQuestions(questionAnswers)} />
       ) : (
         <>
           <QuestionSection>
@@ -36,12 +34,16 @@ export default function Beer() {
             {bestBeerQuestions[questionNumber].answers.map((answer) => (
               <Button key={answer} onClick={() => handleClick(answer)}>
                 <div>{answer}</div>
-                <div>{beerDecider([...questionAnswers, answer]).length}</div>
+                <div>
+                  {beerDeciderQuestions([...questionAnswers, answer]).length}
+                </div>
               </Button>
             ))}
           </AnswerSection>
+          {/* I may leave the results here in the future */}
+          {/* <Results results={beerDecider(questionAnswers)} /> */}
         </>
       )}
-    </main>
+    </>
   );
 }
