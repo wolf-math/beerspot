@@ -7,11 +7,11 @@ import {
 import styles from '../styles/Home.module.css';
 import Link from 'next/link';
 
-export default function Questionnaire() {
+export default function Finder() {
   const question = {
     question: 'What kind of experience are you looking for?',
     answers: [
-      { survey: ['To Forget', '/wasted'] },
+      { survey: ['To Forget', '/forget'] },
       { survey: ['To Eat With a Meal', '/pairing'] },
       { survey: ['To Drink the Best Beer', '/beerDecider'] }
     ]
