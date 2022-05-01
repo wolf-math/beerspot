@@ -21,32 +21,36 @@ export default function Finder() {
     ]
   };
 
+  const MainMenu = () => {
+    return (
+      <>
+        <QuestionSection>
+          <QuestionText>{question.question}</QuestionText>
+        </QuestionSection>
+        <AnswerSection>
+          {question.answers.map((answer) => (
+            <Button
+              onClick={() => setSurvey(answer.survey[1])}
+              key={answer.survey[1]}
+            >
+              {answer.survey[0]}
+            </Button>
+          ))}
+        </AnswerSection>
+      </>
+    );
+  };
+
   const Main = () => {
-    console.log('survey', survey);
-    if (survey === 'main') {
-      return (
-        <>
-          <QuestionSection>
-            <QuestionText>{question.question}</QuestionText>
-          </QuestionSection>
-          <AnswerSection>
-            {question.answers.map((answer) => (
-              <Button
-                onClick={() => setSurvey(answer.survey[1])}
-                key={answer.survey[1]}
-              >
-                {answer.survey[0]}
-              </Button>
-            ))}
-          </AnswerSection>
-        </>
-      );
-    } else if (survey === 'pairing') {
-      return <Pairing />;
-    } else if (survey === 'chooser') {
-      return <BeerChooser />;
-    } else if (survey === 'forget') {
-      return <Forget />;
+    switch (survey) {
+      case 'main':
+        return <MainMenu />;
+      case 'pairing':
+        return <Pairing />;
+      case 'chooser':
+        return <BeerChooser />;
+      case 'forget':
+        return <Forget />;
     }
   };
 
