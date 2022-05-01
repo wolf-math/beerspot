@@ -25,9 +25,6 @@ export default function Navbar() {
           <h1>{page.name}</h1>
         </Link>
       ))}
-      {/* <Link href='/' passHref>
-        <h1>Home</h1>
-      </Link> */}
     </Nav>
   );
 }
