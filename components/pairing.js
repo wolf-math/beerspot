@@ -23,7 +23,7 @@ export default function Pairing() {
     <main className={styles.main}>
       <>
         <QuestionSection>
-          <QuestionText>{pairingQuestions.question} BLAKSFDH</QuestionText>
+          <QuestionText>{pairingQuestions.question}</QuestionText>
         </QuestionSection>
         <AnswerSection>
           {pairingQuestions.answers.map((answer) => (
