@@ -19,5 +19,5 @@ export default function pairingDecider(pairings) {
     beers.push(match);
   });
 
-  return beers.flat();
+  return [...new Set(beers.flat())];
 }
