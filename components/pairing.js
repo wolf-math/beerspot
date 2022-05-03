@@ -19,11 +19,14 @@ export default function Pairing() {
       : setAnswers([...answers, answer]);
   };
 
+  console.log(pairingDecider(answers));
+  console.log(answers);
+
   return (
     <main className={styles.main}>
       <>
         <QuestionSection>
-          <QuestionText>{pairingQuestions.question}</QuestionText>
+          <QuestionText>{pairingQuestions.question} BLAKSFDH</QuestionText>
         </QuestionSection>
         <AnswerSection>
           {pairingQuestions.answers.map((answer) => (
