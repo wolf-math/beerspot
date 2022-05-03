@@ -43,6 +43,7 @@ export default function Pairing() {
           ))}
         </AnswerSection>
       </>
+      <Results results={pairingDecider(answers)} />
     </main>
   );
 }
