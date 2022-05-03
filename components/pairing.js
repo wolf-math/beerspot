@@ -19,9 +19,6 @@ export default function Pairing() {
       : setAnswers([...answers, answer]);
   };
 
-  console.log(pairingDecider(answers));
-  console.log(answers);
-
   return (
     <main className={styles.main}>
       <>
