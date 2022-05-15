@@ -14,6 +14,7 @@ import Results from './Results';
 export default function Pairing() {
   const [answers, setAnswers] = useState([]);
   const toggleAnswers = (answer, e) => {
+    console.log(e);
     answers.includes(answer)
       ? setAnswers((answers) => answers.filter((a) => a !== answer))
       : setAnswers([...answers, answer]);
@@ -39,6 +40,7 @@ export default function Pairing() {
             </label>
           ))}
         </AnswerSection>
+        <button onClick={(e) => setAnswers([])}>Reset</button>
       </>
       <Results results={pairingDecider(answers)} />
     </main>
