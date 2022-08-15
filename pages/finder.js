@@ -15,9 +15,9 @@ export default function Finder() {
   const question = {
     question: 'What kind of experience are you looking for?',
     answers: [
-      { survey: ['To Forget', 'forget'] },
+      { survey: ['To Drink the Best Beer', 'chooser'] },
       { survey: ['To Eat With a Meal', 'pairing'] },
-      { survey: ['To Drink the Best Beer', 'chooser'] }
+      { survey: ['To Forget', 'forget'] }
     ]
   };
 
