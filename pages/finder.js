@@ -7,7 +7,7 @@ import {
   AnswerSection,
   Button
 } from '../styles/questionStyles';
-import styles from '../styles/Home.module.css';
+import styles from '../styles/Home.module.scss';
 import { useState } from 'react';
 
 export default function Finder() {
@@ -33,7 +33,7 @@ export default function Finder() {
               onClick={() => setSurvey(answer.survey[1])}
               key={answer.survey[1]}
             >
-              {answer.survey[0]}
+              <p>{answer.survey[0]}</p>
             </Button>
           ))}
         </AnswerSection>
@@ -58,6 +58,7 @@ export default function Finder() {
     <main className={styles.main}>
       <Main />
       <button onClick={() => setSurvey('main')}>Start Over</button>
+      <button onClick={() => setSurvey('main')}>Home</button>
     </main>
   );
 }
