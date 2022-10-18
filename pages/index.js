@@ -12,10 +12,9 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>Beer Spot</h1>
-        <p className={styles.description}>Find your taste</p>
         <Link href='/finder' passHref>
           <div className={styles.bigButton}>
-            <h2>Find me a Beer &rarr;</h2>
+            <h2>Find your taste &rarr;</h2>
           </div>
         </Link>
       </main>

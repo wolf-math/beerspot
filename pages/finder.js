@@ -58,6 +58,7 @@ export default function Finder() {
     <main className={styles.main}>
       <Main />
       <button onClick={() => setSurvey('main')}>Start Over</button>
+      <button onClick={() => setSurvey('main')}>Home</button>
     </main>
   );
 }

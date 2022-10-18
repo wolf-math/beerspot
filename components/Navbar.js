@@ -3,7 +3,8 @@ import styled from 'styled-components';
 
 const Nav = styled.div`
   display: flex;
-  background-color: #342404;
+  background-color: rgba(50, 50, 50, 0.2);
+  backdrop-filter: blur(10px);
   flex-direction: row;
   cursor: pointer;
   position: sticky;
@@ -15,6 +16,7 @@ const Nav = styled.div`
     margin: 0px;
     color: #d4ccce;
     transition: 0.5s;
+    background-color: rgba(0, 0, 0, 0.8))
 
     &:hover {
       color: #fbf0b7;

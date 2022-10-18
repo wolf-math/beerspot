@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Molle&display=swap');
+
 .container {
   padding: 0 2rem;
 }
@@ -43,6 +45,9 @@
   margin: 0;
   line-height: 1.15;
   font-size: 4rem;
+  font-family: Molle;
+  color: #7c3f04;
+  text-shadow: 3px 3px 5px  #d4ccce;
 }
 
 .title,
@@ -54,15 +59,6 @@
   margin: 4rem 0;
   line-height: 1.5;
   font-size: 1.5rem;
-}
-
-.code {
-  background: #fafafa;
-  border-radius: 5px;
-  padding: 0.75rem;
-  font-size: 1.1rem;
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-    Bitstream Vera Sans Mono, Courier New, monospace;
 }
 
 .grid {
@@ -105,8 +101,6 @@
     }
   }
 }
-
-
 
 .logo {
   height: 1em;
