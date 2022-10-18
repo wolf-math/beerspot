@@ -33,7 +33,7 @@ export default function Finder() {
               onClick={() => setSurvey(answer.survey[1])}
               key={answer.survey[1]}
             >
-              {answer.survey[0]}
+              <p>{answer.survey[0]}</p>
             </Button>
           ))}
         </AnswerSection>

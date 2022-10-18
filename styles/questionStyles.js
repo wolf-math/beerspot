@@ -8,6 +8,8 @@ export const QuestionSection = styled.div`
 export const QuestionText = styled.div`
   margin-bottom: 12px;
   text-align: center;
+  color: #d4ccce;
+  font-size: 2rem;
 `;
 
 export const AnswerSection = styled.div`
@@ -16,19 +18,40 @@ export const AnswerSection = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  color: #d4ccce;
+  font-size: 1.5rem;
 `;
 
 export const Button = styled.button`
-  width: 100%;
-  font-size: 16px;
-  color: #ffffff;
-  background-color: #252d4a;
-  border-radius: 15px;
-  display: flex;
+  max-width: 100%;
+  min-width: 300px;
+  margin: 3px auto;
   padding: 5px;
-  justify-content: space-between;
-  align-items: center;
-  border: 5px solid #234668;
-  margin: 5px;
+  background-color: #7c3f04;
+  color: #d4ccce;
+  border-color: #d4ccce;
+  text-align: center;
+  color: inherit;
+  text-decoration: none;
+  border: 3px solid #eaeaea;
+  border-radius: 10px;
+  transition: 0.5s;
   cursor: pointer;
+
+  p {
+    margin: 0 0 0 0;
+    color: #d4ccce;
+    font-size: 1.5rem;
+  }
+
+  &:hover {
+    background-color: #342404;
+    border-color: #fbf0b7;
+    transition: 0.5s;
+
+    p {
+      color: #fbf0b7;
+      transition: 0.5s;
+    }
+  }
 `;

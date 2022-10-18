@@ -33,7 +33,7 @@ export default function BeerChooser() {
           <AnswerSection>
             {bestBeerQuestions[questionNumber].answers.map((answer) => (
               <Button key={answer} onClick={() => handleClick(answer)}>
-                <div>{answer}</div>
+                <p>{answer}</p>
                 <div>
                   {beerDeciderQuestions([...questionAnswers, answer]).length}
                 </div>
